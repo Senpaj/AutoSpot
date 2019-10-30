@@ -56,7 +56,7 @@ CREATE TABLE `ContactInfo` (
   PRIMARY KEY (`id_ContactInfo`),
   KEY `has` (`fk_Townsid_Towns`),
   CONSTRAINT `has` FOREIGN KEY (`fk_Townsid_Towns`) REFERENCES `towns` (`id_Towns`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -65,7 +65,7 @@ CREATE TABLE `ContactInfo` (
 
 LOCK TABLES `ContactInfo` WRITE;
 /*!40000 ALTER TABLE `ContactInfo` DISABLE KEYS */;
-INSERT INTO `ContactInfo` VALUES ('862480441','biliutavicius.lukas@gmail.com','Lukas',2,13,1),('762480441','Lukas2@gmail.com','Lukas',1,14,1);
+INSERT INTO `ContactInfo` VALUES ('862480441','biliutavicius.lukas@gmail.com','Lukas',2,13,1);
 /*!40000 ALTER TABLE `ContactInfo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -333,7 +333,7 @@ CREATE TABLE `MotoOrder` (
   CONSTRAINT `MotoOrder_ibfk_3` FOREIGN KEY (`Gearbox`) REFERENCES `GearBoxes` (`id_GearBoxes`),
   CONSTRAINT `MotoOrder_ibfk_4` FOREIGN KEY (`engineType`) REFERENCES `EngineTypes` (`id_EngineTypes`),
   CONSTRAINT `has3` FOREIGN KEY (`fk_Userid`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -342,7 +342,7 @@ CREATE TABLE `MotoOrder` (
 
 LOCK TABLES `MotoOrder` WRITE;
 /*!40000 ALTER TABLE `MotoOrder` DISABLE KEYS */;
-INSERT INTO `MotoOrder` VALUES (123.00,99.00,2019,1,1000,NULL,1235,0,2019,NULL,5,'Gerule auto eina nx',3,2,1,2,22,1,4,1,1,1,2,99,1),(1499.00,99.00,2017,3,1000,NULL,1235,0,2019,NULL,5,'Ziauriai gera masina as tau atsakau',4,1,1,2,23,3,1,1,14,1,3,99,0);
+INSERT INTO `MotoOrder` VALUES (123.00,99.00,2019,1,1000,NULL,1235,0,2019,NULL,5,'Gerule auto eina nx',3,2,1,2,22,1,4,1,1,1,2,99,1),(1499.00,99.00,2017,3,1000,NULL,1235,0,2019,NULL,5,'Ziauriai gera masina as tau atsakau',4,1,1,2,23,3,1,1,14,1,3,99,1);
 /*!40000 ALTER TABLE `MotoOrder` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -389,7 +389,7 @@ CREATE TABLE `RecentSearches` (
   `mtid` int(11) DEFAULT NULL,
   `id_RecentSearches` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id_RecentSearches`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -398,7 +398,7 @@ CREATE TABLE `RecentSearches` (
 
 LOCK TABLES `RecentSearches` WRITE;
 /*!40000 ALTER TABLE `RecentSearches` DISABLE KEYS */;
-INSERT INTO `RecentSearches` VALUES (1,1,1,0,0,0,0,0,0,5),(1,1,1,0,0,0,0,0,0,6),(3,1,0,0,0,0,0,0,0,7);
+INSERT INTO `RecentSearches` VALUES (1,1,1,0,0,0,0,0,0,5),(1,1,1,0,0,0,0,0,0,6),(3,1,0,0,0,0,0,0,0,7),(3,1,0,0,0,0,0,0,4,8),(3,1,0,0,0,0,0,0,1,9),(3,0,0,0,0,0,0,0,0,10);
 /*!40000 ALTER TABLE `RecentSearches` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -419,7 +419,7 @@ CREATE TABLE `admins` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -428,7 +428,7 @@ CREATE TABLE `admins` (
 
 LOCK TABLES `admins` WRITE;
 /*!40000 ALTER TABLE `admins` DISABLE KEYS */;
-INSERT INTO `admins` VALUES (1,'Lukas','biliutavicius.lukas@gmail.com',NULL,'$2y$10$039KywX2FOt7uk1JDmBiIebl8t1JFk2Hz3Mv6Rrk.Mno1iFX6SDxu','DtNbv0kwL27lewk1LJxPB7pSXegtSctv3QNOClKbXFWvzyN1dZB9Rn9sZreX','2019-09-28 05:19:26','2019-09-28 05:19:26'),(2,'Lukas','lukas2@gmail.com',NULL,'Lopaslopas',NULL,NULL,NULL);
+INSERT INTO `admins` VALUES (1,'Lukas','biliutavicius.lukas@gmail.com',NULL,'$2y$10$039KywX2FOt7uk1JDmBiIebl8t1JFk2Hz3Mv6Rrk.Mno1iFX6SDxu','DtNbv0kwL27lewk1LJxPB7pSXegtSctv3QNOClKbXFWvzyN1dZB9Rn9sZreX','2019-09-28 05:19:26','2019-09-28 05:19:26'),(2,'Lukas','lukas2@gmail.com',NULL,'Lopaslopas',NULL,NULL,NULL),(3,'Lukas','admin@admin.com',NULL,'$2y$10$.lc/6qkBKbdoLn7etjFBNuJqgSuQXyhRZwUE6sqBompxjQ4/Cd/Cm',NULL,'2019-10-30 09:16:21','2019-10-30 09:16:21');
 /*!40000 ALTER TABLE `admins` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -578,7 +578,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Lukas','biliutavicius.lukas@gmail.com',NULL,'$2y$10$039KywX2FOt7uk1JDmBiIebl8t1JFk2Hz3Mv6Rrk.Mno1iFX6SDxu','RTVsnYrDvM3Tegk2veiGtbb3Ui6MNNa5uIjCu4fPmnu0nqgA44ie3u1PmDQx','2019-09-28 08:19:26','2019-09-28 08:19:26'),(2,'Lopas','lopas@gmail.com',NULL,'$2y$10$arhB8OYQEgyG1eK34LEDa.RxEeAXdQdxeNj2ZBFKI90wa3NCqTEUy','xFP3CqAVCnrYokSQApT6ZBnyTM2PHLBSSEoLwwMA7YEF5VEQ14JVTXigMqNp','2019-09-28 11:26:11','2019-09-28 11:26:11'),(3,'Lukas','Lukas2@gmail.com',NULL,'$2y$10$9FXErcZpMV2RFB2XmUyUbO8MnSMCnqAnuynq.9RGxhzoMO.NSnRY6',NULL,'2019-10-22 08:48:38','2019-10-22 08:48:38');
+INSERT INTO `users` VALUES (1,'Lukas','biliutavicius.lukas@gmail.com',NULL,'$2y$10$039KywX2FOt7uk1JDmBiIebl8t1JFk2Hz3Mv6Rrk.Mno1iFX6SDxu','RTVsnYrDvM3Tegk2veiGtbb3Ui6MNNa5uIjCu4fPmnu0nqgA44ie3u1PmDQx','2019-09-28 08:19:26','2019-09-28 08:19:26'),(2,'Lopas','lopas@gmail.com',NULL,'$2y$10$arhB8OYQEgyG1eK34LEDa.RxEeAXdQdxeNj2ZBFKI90wa3NCqTEUy','xFP3CqAVCnrYokSQApT6ZBnyTM2PHLBSSEoLwwMA7YEF5VEQ14JVTXigMqNp','2019-09-28 11:26:11','2019-09-28 11:26:11'),(3,'Lukas','Lukas2@gmail.com',NULL,'$2y$10$9FXErcZpMV2RFB2XmUyUbO8MnSMCnqAnuynq.9RGxhzoMO.NSnRY6','UMNyDhFv59pAasxBfnnWhTvizMoxHiHT4rNbZkApa5nbHF26YFIIqTY6hybx','2019-10-22 08:48:38','2019-10-22 08:48:38');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -591,4 +591,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-22 14:52:52
+-- Dump completed on 2019-10-30 17:38:01

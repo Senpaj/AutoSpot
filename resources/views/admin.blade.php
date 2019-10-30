@@ -10,10 +10,8 @@
             <div class="card">
                 <div class="card-header">Administratoriaus veiksmai</div>
                     <div class="card-body">
-                        @if(Auth::guard('admin')->check())
                             <a href="{{route('admin.shownotapprovedorders')}}" class="btn btn-info mr-3" role="button">Patvirtinti skelbimus</a>
                             <a href="{{route('admin.addadmin')}}" class="btn btn-info mr-3" role="button">Pridėti admin</a>
-                        @endif
                     </div>
                 </div>
             </div>

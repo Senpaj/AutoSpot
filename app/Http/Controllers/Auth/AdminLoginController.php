@@ -10,7 +10,7 @@ class AdminLoginController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('guest:admin')->except('adminLogout');
+        //$this->middleware('web')->except('adminLogout');
     }
     public function showLoginForm()
     {
@@ -22,11 +22,12 @@ class AdminLoginController extends Controller
             'email' => 'required|email',
             'password' => 'required|min:6'
         ]);
-
+        
         if(Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)){
+            //Session::save();
+            dd($request->session());
             return redirect()->intended(route('admin.dashboard'));
         }
-
         return redirect()->back()->withInput($request->only('email', 'remember'));
     }
     public function adminLogout()

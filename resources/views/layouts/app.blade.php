@@ -78,7 +78,7 @@
         }
 
         var monthOption = "<option value='"+0+"'>----</option>";
-        for(var i = 1; i <= 12; i++){
+        for(var i = 0; i < 12; i++){
             monthOption += "<option value='"+i+"'>"+i+"</option>"
         }
         if(document.getElementById('yearForNewOrder') != null) document.getElementById('yearForNewOrder').innerHTML = yearOption;
@@ -88,12 +88,12 @@
         var year = new Date();
         year = year.getFullYear();
         var yearOption = "<option value='"+0+"'>----</option>";
-        for(var i = year; i <= year+4; i++){
+        for(var i = year; i < year+5; i++){
             yearOption += "<option value='"+i+"'>"+i+"</option>"
         }
 
         var monthOption = "<option value='"+0+"'>----</option>";
-        for(var i = 1; i <= 12; i++){
+        for(var i = 0; i < 12; i++){
             monthOption += "<option value='"+i+"'>"+i+"</option>"
         }
         if(document.getElementById('yearForTA') != null) document.getElementById('yearForTA').innerHTML = yearOption;

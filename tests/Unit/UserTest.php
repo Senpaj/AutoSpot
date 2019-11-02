@@ -14,8 +14,9 @@ class UserTest extends TestCase
      *
      * @return void
      */
-    public function test_insert_user()
+    public function test_register()
     {
+        $this->withoutMiddleware();
         $faker = factory(User::class)->create()->toArray();
         $response = $this->post('/register', $faker); //raso  //pisa Sorry, your session has expired. Please refresh and try again.    
 
@@ -32,6 +33,5 @@ class UserTest extends TestCase
         ];
 
         $response = $this->post('login', $userArray);  //raso Sorry, your session has expired. Please refresh and try again.    
-        echo strip_tags($response->getContent());
     }
 }

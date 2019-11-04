@@ -26,7 +26,7 @@ class UserTest extends TestCase
 
     public function test_login()
     {
-        $user = User::find(19);
+        $user = User::find(3);
         $userArray = [
             'email' => $user->email,
             'password' => 'secret',

@@ -9,11 +9,11 @@ use App\User;
 
 class UserTest extends TestCase
 {
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
+    public function setUp(): void
+    {
+        parent::setUp();
+        $this->user = User::find(3);
+    }
     public function test_register()
     {
         $this->withoutMiddleware();
@@ -26,6 +26,8 @@ class UserTest extends TestCase
 
     public function test_login()
     {
+        $this->withoutMiddleware();
+        $this->followingRedirects();
         $user = User::find(3);
         $userArray = [
             'email' => $user->email,
@@ -33,5 +35,6 @@ class UserTest extends TestCase
         ];
 
         $response = $this->post('login', $userArray);  //raso Sorry, your session has expired. Please refresh and try again.    
+        $this->assertEquals(200, $response->getStatusCode());
     }
 }

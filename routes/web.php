@@ -65,7 +65,7 @@ Route::prefix('admin')->group(function() {
             $order->save();
         }
         elseif ($action == 0){
-            $order->approved = 2;
+            $order->approved = 0;
             $order->save();
         }
         return redirect()->route('admin.shownotapprovedorders');

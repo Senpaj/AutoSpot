@@ -64,10 +64,8 @@ class RouteTest extends TestCase
     }
     public function test_admin_show_full_info_route()
     {
-        //Neveikia
-
-        //$response = $this->get('/admin/showfullinfo/1');
-        //$response->assertStatus(200);
+        $response = $this->get('/admin/showfullinfo/22');
+        $response->assertStatus(200);
     }
     public function test_admin_not_approved_orders_route()
     {
@@ -81,21 +79,17 @@ class RouteTest extends TestCase
     }
     public function test_admin_change_order_status_route()
     {
-        //Neveikia
-
-        //$response = $this->get('/admin/changeorderstatus/1/1');
-        //$response->assertStatus(200);
+        $response = $this->actingAs($this->user)->get('/admin/changeorderstatus/22/1');
+        $response = $this->actingAs($this->user)->get('/admin/changeorderstatus/22/0');
+        
+        $this->assertDatabaseHas('MotoOrder', [
+            'id_MotoOrder' => 22,
+            'approved' => 0
+        ]);
     }
     public function test_admin_add_admin_route()
     {
         $response = $this->get('/admin/addadmin');
         $response->assertStatus(200);
-    }
-    public function test_admin_insert_admin_route()
-    {
-        //Neveikiantis route
-
-        //$response = $this->get('/admin/insertadmin');
-        //$response->assertStatus(200);
     }
 }

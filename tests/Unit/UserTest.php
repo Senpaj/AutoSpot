@@ -18,7 +18,7 @@ class UserTest extends TestCase
     {
         $this->withoutMiddleware();
         $faker = factory(User::class)->create()->toArray();
-        $response = $this->post('/register', $faker); //raso  //pisa Sorry, your session has expired. Please refresh and try again.    
+        $response = $this->post('/register', $faker); //raso Sorry, your session has expired. Please refresh and try again.    
 
         array_splice($faker, 4, 2);
         $this->assertDatabaseHas('users', $faker);

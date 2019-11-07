@@ -35,6 +35,7 @@ class UserTest extends TestCase
         ];
 
         $response = $this->post('login', $userArray);  //raso Sorry, your session has expired. Please refresh and try again.    
+        $response->getContent();
         $this->assertEquals(200, $response->getStatusCode());
     }
 }

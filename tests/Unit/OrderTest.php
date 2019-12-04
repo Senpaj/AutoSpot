@@ -19,11 +19,7 @@ class OrderTest extends TestCase
         parent::setUp();
         $this->user = User::find(3);
     }
-    /**
-     * A basic unit test example.
-     *
-     * @return void
-     */
+  
     public function test_display_orders()
     {
         $response = $this->actingAs($this->user)->get('/home');
